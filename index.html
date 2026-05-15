@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>वार्षिक अहवाल</title>
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"> -->
+  <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* ================= THEME ================= */
+
+:root{
+
+    --primary-dark:#8d0e3a;
+    --primary:#b0124a;
+
+    --light-bg:#fff4f8;
+    --table-head:#fde8ef;
+    --border:#f3c7d7;
+
+    --text:#1e293b;
+}
+
+/* ================= BODY ================= */
+
+body{
+    background:#fff8fb;
+    font-family:'Noto Sans Devanagari', sans-serif;
+    color:var(--text);
+    margin:0;
+    padding:0;
+}
+
+/* ================= PAGE ================= */
+
+.page-wrapper{
+    padding:12px 0 22px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container-custom{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ================= TOP AREA ================= */
+
+.back-btn{
+    border:1px solid var(--border);
+    background:#fff;
+    padding:8px 16px;
+    border-radius:10px;
+    color:var(--primary-dark);
+    text-decoration:none;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:18px;
+    font-size:14px;
+}
+
+/* ================= TITLE ================= */
+
+.main-title{
+    color:var(--primary-dark);
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:4px;
+    line-height:1.1;
+}
+
+.main-sub{
+    color:var(--primary);
+    font-size:17px;
+    font-weight:700;
+}
+
+/* ================= YEAR + PDF ================= */
+
+.top-action{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+    margin-bottom:16px;
+    gap:15px;
+}
+
+.year-box{
+    background:var(--light-bg);
+    color:var(--primary-dark);
+    border:1px solid var(--border);
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:15px;
+}
+
+.pdf-btn{
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:15px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* ================= INFO CARDS ================= */
+
+.info-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    height:100%;
+    box-shadow:0 2px 6px rgba(176,18,74,0.05);
+}
+
+.info-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:16px;
+}
+
+.green{
+    background:linear-gradient(135deg,#8d0e3a,#b0124a);
+}
+
+.orange{
+    background:linear-gradient(135deg,#c2185b,#d81b60);
+}
+
+.blue{
+    background:linear-gradient(135deg,#ad1457,#c2185b);
+}
+
+.purple{
+    background:linear-gradient(135deg,#7b1e52,#a83279);
+}
+
+.info-title{
+    font-size:13px;
+    color:#64748b;
+    font-weight:600;
+    margin-bottom:3px;
+}
+
+.info-value{
+    font-size:22px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.value-green,
+.value-orange,
+.value-blue,
+.value-purple{
+    color:var(--primary-dark);
+}
+
+.small-text{
+    color:#64748b;
+    font-size:12px;
+}
+
+/* ================= TABLES ================= */
+
+.section-box{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    /* height:100%; */
+    box-shadow:0 2px 6px rgba(176,18,74,0.05);
+    border-radius:12px;
+    height:auto !important;
+}
+
+.section-head{
+    padding:11px 14px;
+    font-size:17px;
+    font-weight:800;
+    color:var(--primary-dark);
+
+    border-bottom:1px solid var(--border);
+
+    background:linear-gradient(
+        to right,
+        #fff0f5,
+        #fde8ef
+    );
+}
+
+.custom-table{
+    margin:0;
+}
+
+.custom-table thead{
+    background:var(--table-head);
+}
+
+.custom-table th{
+    font-size:12px;
+    padding:9px;
+    color:var(--primary-dark);
+    font-weight:800;
+    border-color:#f7d3df !important;
+    background:var(--table-head);
+}
+
+.custom-table td{
+    padding:9px;
+    font-size:14px;
+    border-color:#f8dfe7 !important;
+}
+
+.custom-table tbody tr:hover{
+    background:#fff7fa;
+}
+
+.custom-table tbody tr.fw-bold{
+    background:#fff0f5;
+    color:var(--primary-dark);
+}
+
+/* ================= CHART ================= */
+
+.chart-box{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 2px 6px rgba(176,18,74,0.05);
+}
+
+.chart-title{
+    color:var(--primary-dark);
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.custom-table tbody tr:last-child td{
+    background:#ffe8f1 !important;
+    color:#8d0e3a !important;
+    font-weight:800;
+}
+
+/* ================= COLORFUL PIE CHART ================= */
+
+.chart-box{
+    padding:14px;
+    border-radius:12px;
+}
+
+.fake-chart{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    margin:auto;
+
+    background:
+    conic-gradient(
+        #16a34a 0% 36%,
+        #2563eb 36% 60%,
+        #f59e0b 60% 70%,
+        #9333ea 70% 86%,
+        #ec4899 86% 94%,
+        #06b6d4 94% 100%
+    );
+
+    position:relative;
+}
+
+.fake-chart::after{
+    content:'';
+    width:75px;
+    height:75px;
+    background:#fff;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* ================= NOTE ================= */
+
+.bottom-box{
+    background:#fffdf7;
+    border:1px solid #f3e4b7;
+    border-radius:12px;
+    padding:16px 18px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.note-area{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+}
+
+.note-icon{
+    width:48px;
+    height:48px;
+    min-width:48px;
+
+    border-radius:50%;
+    background:#0d47c9;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:20px;
+}
+
+.note-title{
+    font-size:18px;
+    font-weight:800;
+    color:#374151;
+    margin-bottom:8px;
+}
+
+.note-list{
+    margin:0;
+    padding-left:18px;
+}
+
+.note-list li{
+    margin-bottom:8px;
+    color:#475569;
+    font-weight:600;
+    line-height:1.5;
+    font-size:13px;
+}
+
+/* ================= PDF BUTTON ================= */
+
+.pdf-btn,
+.pdf-download-btn{
+    padding:10px 16px;
+    font-size:14px;
+}
+
+.pdf-download-btn{
+    background:#fff;
+    border:2px solid #b7cdfd;
+
+    color:#2563eb;
+    font-weight:800;
+
+    /* padding:12px 22px; */
+    border-radius:12px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+.pdf-download-btn:hover{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* ================= UPDATE ================= */
+
+.update-box{
+    margin-top:14px;
+    color:#6b7280;
+    font-weight:600;
+    font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:992px){
+
+.main-title{
+    font-size:30px;
+}
+
+.main-sub{
+    font-size:16px;
+}
+
+.top-action{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.bottom-box{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.pdf-download-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.fake-chart{
+    width:200px;
+    height:200px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+<!-- HEADER FILE LOAD -->
+<div id="header"></div>
+
+<div class="page-wrapper">
+
+<div class="container-custom">
+
+<!-- BACK -->
+
+<a href="#" class="back-btn">
+<i class="fa-solid fa-arrow-left"></i>
+मागील पृष्ठावर जा
+</a>
+
+<!-- TITLE -->
+
+<div class="main-title">
+वार्षिक अहवाल
+</div>
+
+<div class="main-sub">
+(प्रत्यक्ष जमा व प्रत्यक्ष खर्च अहवाल)
+</div>
+
+<!-- ACTION -->
+
+<div class="top-action">
+
+<div class="year-box">
+आर्थिक वर्ष :
+<b>2024-25</b>
+<i class="fa-regular fa-calendar"></i>
+</div>
+
+<button class="pdf-btn">
+<i class="fa-solid fa-download"></i>
+PDF डाउनलोड करा
+</button>
+
+</div>
+
+<!-- INFO CARDS -->
+
+<div class="row g-4">
+
+<!-- PREVIOUS BALANCE -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="info-card">
+
+<div class="d-flex gap-3 align-items-start">
+
+<div class="info-icon purple">
+<i class="fa-solid fa-piggy-bank"></i>
+</div>
+
+<div>
+<div class="info-title">मागील एकूण शिल्लक</div>
+<div class="info-value value-purple">₹ 8,45,320</div>
+<div class="small-text">(मागील वर्ष शिल्लक)</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TOTAL RECEIVED -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="info-card">
+
+<div class="d-flex gap-3 align-items-start">
+
+<div class="info-icon green">
+<i class="fa-solid fa-coins"></i>
+</div>
+
+<div>
+<div class="info-title">एकूण प्रत्यक्ष जमा</div>
+<div class="info-value value-green">₹ 1,18,76,320</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TOTAL EXPENSE -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="info-card">
+
+<div class="d-flex gap-3 align-items-start">
+
+<div class="info-icon orange">
+<i class="fa-solid fa-wallet"></i>
+</div>
+
+<div>
+<div class="info-title">एकूण प्रत्यक्ष खर्च</div>
+<div class="info-value value-orange">₹ 1,05,34,890</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FINAL BALANCE -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="info-card">
+
+<div class="d-flex gap-3 align-items-start">
+
+<div class="info-icon blue">
+<i class="fa-solid fa-scale-balanced"></i>
+</div>
+
+<div>
+<div class="info-title">अंतिम शिल्लक</div>
+<div class="info-value value-blue">₹ 13,41,430</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TABLES -->
+
+<div class="row g-4 mt-1">
+
+<div class="col-lg-6">
+
+<div class="section-box">
+
+<div class="section-head">
+प्रत्यक्ष जमा (स्रोत निहाय)
+</div>
+
+<table class="table custom-table table-bordered">
+
+<thead>
+<tr>
+<th>अ. क्र.</th>
+<th>उत्पन्नाचे स्रोत</th>
+<th>रक्कम</th>
+<th>टक्केवारी (%)</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>केंद्र शासन अनुदान</td>
+<td>42,80,000</td>
+<td>36.06%</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>राज्य शासन अनुदान</td>
+<td>28,40,000</td>
+<td>23.90%</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>स्वतःचे उत्पन्न</td>
+<td>11,85,340</td>
+<td>9.98%</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>मनरेगा अनुदान</td>
+<td>19,25,000</td>
+<td>16.21%</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>वित्त आयोग अनुदान</td>
+<td>9,60,000</td>
+<td>8.08%</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>इतर प्राप्ती / व्याज</td>
+<td>6,85,980</td>
+<td>5.77%</td>
+</tr>
+
+<tr class="fw-bold">
+<td colspan="2">एकूण</td>
+<td>₹ 1,18,76,320</td>
+<td>100%</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="section-box">
+
+<div class="section-head">
+प्रत्यक्ष खर्च (विभाग निहाय)
+</div>
+
+<table class="table custom-table table-bordered">
+
+<thead>
+<tr>
+<th>अ. क्र.</th>
+<th>खर्चाचे विभाग</th>
+<th>रक्कम</th>
+<th>टक्केवारी (%)</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>सर्वसाधारण प्रशासन</td>
+<td>13,75,450</td>
+<td>13.06%</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>ग्रामविकास</td>
+<td>24,20,300</td>
+<td>22.90%</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>पाणी पुरवठा व स्वच्छता</td>
+<td>16,45,120</td>
+<td>15.63%</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>रस्ते व बांधकाम</td>
+<td>14,30,800</td>
+<td>13.58%</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>शिक्षण</td>
+<td>8,75,200</td>
+<td>8.30%</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>आरोग्य</td>
+<td>5,60,500</td>
+<td>5.32%</td>
+</tr>
+
+<tr class="fw-bold">
+<td colspan="2">एकूण</td>
+<td>₹ 1,05,34,890</td>
+<td>100%</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHARTS -->
+
+<div class="row g-4 mt-1">
+
+<div class="col-lg-6">
+
+<div class="chart-box">
+
+<div class="chart-title">
+प्रत्यक्ष जमा (टक्केवारीनुसार)
+</div>
+
+<div class="fake-chart"></div>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="chart-box">
+
+<div class="chart-title">
+प्रत्यक्ष खर्च (टक्केवारीनुसार)
+</div>
+
+<div class="fake-chart"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTE -->
+
+<div class="bottom-box mt-4">
+
+<div class="note-area">
+
+<div class="note-icon">
+<i class="fa-solid fa-info"></i>
+</div>
+
+<div>
+
+<div class="note-title">
+टीप :
+</div>
+
+<ol class="note-list">
+
+<li>
+वरील आर्थिक अहवाल प्रत्यक्ष जमा व खर्चावर आधारित आहे.
+</li>
+
+<li>
+लेखा परीक्षण पूर्ण झाल्यानंतर माहिती अद्ययावत करण्यात येते.
+</li>
+
+</ol>
+
+</div>
+
+</div>
+
+<a href="#" class="pdf-download-btn">
+
+<i class="fa-regular fa-file-pdf"></i>
+
+संपूर्ण आर्थिक अहवाल (PDF) डाउनलोड करा
+
+</a>
+
+</div>
+
+<!-- UPDATE -->
+
+<div class="update-box">
+<i class="fa-regular fa-calendar"></i>
+शेवटचे अपडेट दिनांक : 25/06/2025
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER FILE LOAD -->
+<div id="footer"></div>
+<script>
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("header").innerHTML = data;
+});
+
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
+});
+
+
+</script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
