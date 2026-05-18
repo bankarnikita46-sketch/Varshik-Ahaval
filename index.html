@@ -279,6 +279,83 @@ body{
     background:#ffe8f1 !important;
     color:#8d0e3a !important;
     font-weight:800;
+} 
+
+/* ================= COLORFUL PIE CHART CHARTS ================= */
+
+.income-chart{
+background:
+conic-gradient(
+#16a34a 0% 36.06%,
+#2563eb 36.06% 59.96%,
+#f59e0b 59.96% 69.94%,
+#9333ea 69.94% 86.15%,
+#ec4899 86.15% 94.23%,
+#06b6d4 94.23% 100%
+);
+}
+
+.expense-chart{
+background:
+conic-gradient(
+#16a34a 0% 13.06%,
+#2563eb 13.06% 35.96%,
+#f59e0b 35.96% 51.59%,
+#9333ea 51.59% 65.17%,
+#ec4899 65.17% 73.47%,
+#06b6d4 73.47% 78.79%,
+#14b8a6 78.79% 84.53%,
+#fb923c 84.53% 89.23%,
+#9ca3af 89.23% 100%
+);
+}
+
+.chart-legend{
+font-size:13px;
+font-weight:600;
+line-height:2;
+}
+
+.legend{
+display:inline-block;
+width:14px;
+height:14px;
+border-radius:3px;
+margin-right:8px;
+}
+
+.green-l{background:#16a34a;}
+.blue-l{background:#2563eb;}
+.orange-l{background:#f59e0b;}
+.purple-l{background:#9333ea;}
+.pink-l{background:#ec4899;}
+.cyan-l{background:#06b6d4;}
+.yellow-l{background:#eab308;}
+.teal-l{background:#14b8a6;}
+.gray-l{background:#9ca3af;}
+
+.chart-box{
+min-height:100%;
+}
+
+.fake-chart{
+width:220px;
+height:220px;
+border-radius:50%;
+position:relative;
+flex-shrink:0;
+}
+
+.fake-chart::after{
+content:'';
+position:absolute;
+width:90px;
+height:90px;
+background:#fff;
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 }
 
 /* ================= COLORFUL PIE CHART ================= */
@@ -331,6 +408,7 @@ body{
     justify-content:space-between;
     align-items:center;
     gap:20px;
+    margin-bottom: 10px;
 }
 
 .note-area{
@@ -444,9 +522,18 @@ body{
     justify-content:center;
 }
 
-.fake-chart{
+/* .fake-chart{
     width:200px;
     height:200px;
+} */
+ .fake-chart{
+width:180px;
+height:180px;
+margin:auto;
+}
+
+.chart-legend{
+width:100%;
 }
 
 }
@@ -496,33 +583,9 @@ PDF डाउनलोड करा
 
 </div>
 
-<!-- INFO CARDS -->
+<!-- ================= INFO CARDS ================= -->
 
 <div class="row g-4">
-
-<!-- PREVIOUS BALANCE -->
-
-<div class="col-lg-3 col-md-6">
-
-<div class="info-card">
-
-<div class="d-flex gap-3 align-items-start">
-
-<div class="info-icon purple">
-<i class="fa-solid fa-piggy-bank"></i>
-</div>
-
-<div>
-<div class="info-title">मागील एकूण शिल्लक</div>
-<div class="info-value value-purple">₹ 8,45,320</div>
-<div class="small-text">(मागील वर्ष शिल्लक)</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 <!-- TOTAL RECEIVED -->
 
@@ -533,7 +596,7 @@ PDF डाउनलोड करा
 <div class="d-flex gap-3 align-items-start">
 
 <div class="info-icon green">
-<i class="fa-solid fa-coins"></i>
+<i class="fa-solid fa-sack-dollar"></i>
 </div>
 
 <div>
@@ -555,13 +618,13 @@ PDF डाउनलोड करा
 
 <div class="d-flex gap-3 align-items-start">
 
-<div class="info-icon orange">
-<i class="fa-solid fa-wallet"></i>
+<div class="info-icon green">
+<i class="fa-solid fa-file-invoice"></i>
 </div>
 
 <div>
 <div class="info-title">एकूण प्रत्यक्ष खर्च</div>
-<div class="info-value value-orange">₹ 1,05,34,890</div>
+<div class="info-value value-green">₹ 1,05,34,890</div>
 </div>
 
 </div>
@@ -570,7 +633,7 @@ PDF डाउनलोड करा
 
 </div>
 
-<!-- FINAL BALANCE -->
+<!-- BALANCE -->
 
 <div class="col-lg-3 col-md-6">
 
@@ -578,14 +641,40 @@ PDF डाउनलोड करा
 
 <div class="d-flex gap-3 align-items-start">
 
-<div class="info-icon blue">
-<i class="fa-solid fa-scale-balanced"></i>
+<div class="info-icon orange">
+<i class="fa-solid fa-lemon"></i>
 </div>
 
 <div>
-<div class="info-title">अंतिम शिल्लक</div>
-<div class="info-value value-blue">₹ 13,41,430</div>
+<div class="info-title">शिल्लक</div>
+<div class="info-value value-orange">₹ 13,41,430</div>
 </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- AUDIT STATUS -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="info-card">
+
+<div class="d-flex gap-3 align-items-start">
+
+<div class="info-icon purple">
+<i class="fa-solid fa-clipboard-check"></i>
+</div>
+
+<div>
+<div class="info-title">लेखा परीक्षण स्थिती</div>
+<div class="info-value value-purple" style="font-size:20px;">
+पूर्ण
+</div>
+
+<div class="small-text">(25/06/2025)</div>
 
 </div>
 
@@ -595,27 +684,36 @@ PDF डाउनलोड करा
 
 </div>
 
-<!-- TABLES -->
+</div>
+
+
+
+<!-- ================= TABLE SECTION ================= -->
 
 <div class="row g-4 mt-1">
+
+<!-- INCOME TABLE -->
 
 <div class="col-lg-6">
 
 <div class="section-box">
 
 <div class="section-head">
+<i class="fa-solid fa-sack-dollar me-2"></i>
 प्रत्यक्ष जमा (स्रोत निहाय)
 </div>
 
 <table class="table custom-table table-bordered">
 
 <thead>
+
 <tr>
 <th>अ. क्र.</th>
 <th>उत्पन्नाचे स्रोत</th>
-<th>रक्कम</th>
+<th>रक्कम (₹)</th>
 <th>टक्केवारी (%)</th>
 </tr>
+
 </thead>
 
 <tbody>
@@ -636,7 +734,7 @@ PDF डाउनलोड करा
 
 <tr>
 <td>3</td>
-<td>स्वतःचे उत्पन्न</td>
+<td>स्वतःचे उत्पन्न (कर व शुल्क)</td>
 <td>11,85,340</td>
 <td>9.98%</td>
 </tr>
@@ -676,23 +774,30 @@ PDF डाउनलोड करा
 
 </div>
 
+
+
+<!-- EXPENSE TABLE -->
+
 <div class="col-lg-6">
 
 <div class="section-box">
 
 <div class="section-head">
+<i class="fa-solid fa-circle-dollar-to-slot me-2"></i>
 प्रत्यक्ष खर्च (विभाग निहाय)
 </div>
 
 <table class="table custom-table table-bordered">
 
 <thead>
+
 <tr>
 <th>अ. क्र.</th>
 <th>खर्चाचे विभाग</th>
-<th>रक्कम</th>
+<th>रक्कम (₹)</th>
 <th>टक्केवारी (%)</th>
 </tr>
+
 </thead>
 
 <tbody>
@@ -739,6 +844,27 @@ PDF डाउनलोड करा
 <td>5.32%</td>
 </tr>
 
+<tr>
+<td>7</td>
+<td>सामाजिक व सांस्कृतिक विकास</td>
+<td>6,05,450</td>
+<td>5.74%</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>कृषी व संबंधित कामकाज</td>
+<td>4,95,620</td>
+<td>4.70%</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>इतर / आकस्मिक खर्च</td>
+<td>4,22,450</td>
+<td>4.02%</td>
+</tr>
+
 <tr class="fw-bold">
 <td colspan="2">एकूण</td>
 <td>₹ 1,05,34,890</td>
@@ -755,33 +881,177 @@ PDF डाउनलोड करा
 
 </div>
 
-<!-- CHARTS -->
+
+
+<!-- ================= CHART SECTION ================= -->
+
+<div class="row g-4 mt-1">
+
+<!-- INCOME CHART -->
+
+<div class="col-lg-6">
+
+<div class="chart-box">
+
+<div class="chart-title">
+<i class="fa-solid fa-chart-pie me-2"></i>
+प्रत्यक्ष जमा (टक्केवारीनुसार)
+</div>
+
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+<div class="fake-chart income-chart"></div>
+
+<div class="chart-legend">
+
+<div><span class="legend green-l"></span> केंद्र शासन अनुदान (36.06%)</div>
+
+<div><span class="legend blue-l"></span> राज्य शासन अनुदान (23.90%)</div>
+
+<div><span class="legend orange-l"></span> स्वतःचे उत्पन्न (9.98%)</div>
+
+<div><span class="legend purple-l"></span> मनरेगा अनुदान (16.21%)</div>
+
+<div><span class="legend pink-l"></span> वित्त आयोग अनुदान (8.08%)</div>
+
+<div><span class="legend cyan-l"></span> इतर प्राप्ती / व्याज (5.77%)</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- EXPENSE CHART -->
+
+<div class="col-lg-6">
+
+<div class="chart-box">
+
+<div class="chart-title">
+<i class="fa-solid fa-chart-pie me-2"></i>
+प्रत्यक्ष खर्च (टक्केवारीनुसार)
+</div>
+
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+<div class="fake-chart expense-chart"></div>
+
+<div class="chart-legend">
+
+<div><span class="legend green-l"></span> सर्वसाधारण प्रशासन (13.06%)</div>
+
+<div><span class="legend blue-l"></span> ग्रामविकास (22.90%)</div>
+
+<div><span class="legend yellow-l"></span> पाणी पुरवठा व स्वच्छता (15.63%)</div>
+
+<div><span class="legend purple-l"></span> रस्ते व बांधकाम (13.58%)</div>
+
+<div><span class="legend pink-l"></span> शिक्षण (8.30%)</div>
+
+<div><span class="legend cyan-l"></span> आरोग्य (5.32%)</div>
+
+<div><span class="legend teal-l"></span> सामाजिक व सांस्कृतिक विकास (5.74%)</div>
+
+<div><span class="legend orange-l"></span> कृषी व संबंधित कामकाज (4.70%)</div>
+
+<div><span class="legend gray-l"></span> इतर / आकस्मिक खर्च (4.02%)</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= DEVELOPMENT STATUS ================= -->
 
 <div class="row g-4 mt-1">
 
 <div class="col-lg-6">
 
-<div class="chart-box">
+<div class="section-box">
 
-<div class="chart-title">
-प्रत्यक्ष जमा (टक्केवारीनुसार)
+<div class="section-head">
+<i class="fa-solid fa-list-check me-2"></i>
+विकास कामांची स्थिती
 </div>
 
-<div class="fake-chart"></div>
+<div class="row text-center p-3">
+
+<div class="col-3">
+<h4 class="fw-bold">58</h4>
+<div class="small-text">मंजूर कामे</div>
+</div>
+
+<div class="col-3">
+<h4 class="fw-bold">42</h4>
+<div class="small-text">पूर्ण कामे</div>
+</div>
+
+<div class="col-3">
+<h4 class="fw-bold">12</h4>
+<div class="small-text">प्रगतीपथावर</div>
+</div>
+
+<div class="col-3">
+<h4 class="fw-bold">4</h4>
+<div class="small-text">रद्द कामे</div>
+</div>
+
+</div>
 
 </div>
 
 </div>
+
+
+
+<!-- PDF SECTION -->
 
 <div class="col-lg-6">
 
-<div class="chart-box">
+<div class="section-box">
 
-<div class="chart-title">
-प्रत्यक्ष खर्च (टक्केवारीनुसार)
+<div class="section-head">
+<i class="fa-solid fa-file-pdf me-2"></i>
+महत्वाची दस्तऐवज
 </div>
 
-<div class="fake-chart"></div>
+<div class="p-3">
+
+<div class="d-flex justify-content-between align-items-center border rounded p-3 mb-3">
+
+<div>
+<i class="fa-regular fa-file-lines me-2"></i>
+वार्षिक आर्थिक अहवाल (PDF)
+</div>
+
+<button class="pdf-download-btn py-2 px-3">
+डाउनलोड करा
+</button>
+
+</div>
+
+<div class="d-flex justify-content-between align-items-center border rounded p-3">
+
+<div>
+<i class="fa-regular fa-file-lines me-2"></i>
+लेखा परीक्षण अहवाल (Audit Report)
+</div>
+
+<button class="pdf-download-btn py-2 px-3">
+डाउनलोड करा
+</button>
 
 </div>
 
@@ -789,15 +1059,15 @@ PDF डाउनलोड करा
 
 </div>
 
-<!-- NOTE -->
+</div>
+
+</div>
+
+
+
+<!-- ================= NOTE SECTION ================= -->
 
 <div class="bottom-box mt-4">
-
-<div class="note-area">
-
-<div class="note-icon">
-<i class="fa-solid fa-info"></i>
-</div>
 
 <div>
 
@@ -808,40 +1078,24 @@ PDF डाउनलोड करा
 <ol class="note-list">
 
 <li>
-वरील आर्थिक अहवाल प्रत्यक्ष जमा व खर्चावर आधारित आहे.
+वरील अहवाल हा 31 मार्च 2025 पर्यंतचा आहे.
 </li>
 
 <li>
-लेखा परीक्षण पूर्ण झाल्यानंतर माहिती अद्ययावत करण्यात येते.
+लेखा परीक्षण पूर्ण झाल्यानंतर अंतिम आकडेवारी बदल होऊ शकते.
 </li>
 
 </ol>
 
 </div>
 
-</div>
-
-<a href="#" class="pdf-download-btn">
-
-<i class="fa-regular fa-file-pdf"></i>
-
-संपूर्ण आर्थिक अहवाल (PDF) डाउनलोड करा
-
-</a>
-
-</div>
-
-<!-- UPDATE -->
-
 <div class="update-box">
 <i class="fa-regular fa-calendar"></i>
-शेवटचे अपडेट दिनांक : 25/06/2025
+शेवटचे अपडेट दिनांक : 15/05/2025
 </div>
 
 </div>
-
 </div>
-
 <!-- FOOTER FILE LOAD -->
 <div id="footer"></div>
 <script>
